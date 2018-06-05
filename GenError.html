@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">    	   
+$(document).ready(function(){ 
+	$("button").click(function(){ 
+		alert("click");
+		/* $("#data").submit(function(e) {
+                e.preventDefault(); */
+		$.ajax({url: "AjaxPage.jsp", success : function(responseText) {
+			alert("SUCCESS!");
+			alert(responseText);
+		$("#res").$("nam").val();	
+		
+	},
+		error:function(){
+			alert("ERROR!");
+		}
+	/* error:function(xhr){
+    	if(xhr.status==404){
+    		 $("q").text("404 error dude");
+    		 alert("if");
+    	}
+    	else{
+    		alert("Else");
+    	}
+	} */
+	}); 
+	}); 
+	}); 
+</script>
+</head>
+<body>
+ <h1>Enter your name</h1>
+       <form name="data" id="data">
+              <input type="text" id="nam" name="name"> 
+              <button>Submit</button>
+              <div id="res">The data should come here</div>
+              <br>
+            </form>
+      
+
+</body>
+</html>
